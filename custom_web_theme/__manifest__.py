@@ -15,9 +15,9 @@
     'data': [
         'views/layout.xml',
         # 'views/homepage.xml',
-        'views/snippets/snippets.xml',
+        # 'views/snippets/snippets.xml',
     ],
-    
+
     'assets': {
         'web._assets_primary_variables': [
             'custom_web_theme/static/src/scss/primary_variables.scss',

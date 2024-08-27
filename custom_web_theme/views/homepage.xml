@@ -78,10 +78,10 @@
 
 
                     <!-- Nuts Products Section -->
-                    <t t-call="custom_web_theme.product_card_snippet">
+                    <!-- <t t-call="custom_web_theme.product_card_snippet">
                         <t t-set="title">Top Selling</t>
                         <t t-set="products" t-value="request.env['product.template'].sudo().search([('website_published', '=', True), ('public_categ_ids', 'in', [1])], limit=4)"/>
-                    </t>
+                    </t> -->
 
                     <!-- Dried Fruits Products Section -->
                     <!-- <t t-call="website_evabazaar.custom_product_card">

@@ -1,0 +1,36 @@
+// Define the color palette
+$o-color-palettes: (
+    'evabazaar': ('o-color-1': #066542,
+        'o-color-2': #ccab65,
+        'o-color-3': #011F14,
+        'o-color-4': #ffffff,
+        'o-color-5': #363636,
+    ),
+);
+
+// Add your palette to the list of color palettes
+$o-color-palette-name: 'evabazaar';
+
+// Website-specific values
+$o-website-value-palettes: (
+    ('font': 'Raleway',
+        'headings-font': 'Raleway',
+        'navbar-font': 'Raleway',
+        'buttons-font': 'Raleway',
+        'color-palettes-name': 'evabazaar',
+    ),
+);
+
+// Theme font configuration
+$o-theme-font-configs: (
+    'Raleway': ('family': ('Raleway', sans-serif),
+        'url': 'Raleway:300,300i,400,400i,700,700i',
+    ),
+);
+
+// Optional: If you want to ensure your color palette is selected
+$o-selected-color-palettes-names: (
+    'evabazaar'
+);
+
+// You can add more custom variables here if needed

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="layout" inherit_id="website.layout" name="Eva Bazaar Layout">
+        <!-- Customize header -->
+        <xpath expr="//header" position="replace">
+            <header>
+                <nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top" style="transition: all 0.3s ease;">
+                    <div class="container-fluid">
+                        <!-- Shopping Cart (visible on medium and large screens) -->
+                        <div class="navbar-cart d-none d-md-block">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-shopping-cart icon-color" style="font-size:24px;"></i>
+                            </a>
+                        </div>
+
+                        <!-- Logo (visible on small screens) -->
+                        <a class="navbar-brand d-md-none" href="#">
+                            <img style="height:100px; width:auto;" src="custom_web_theme/static/src/img/EVA-LOGO.png" alt="Logo"/>
+                        </a>
+
+                        <!-- Mobile Toggle Button -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fa fa-bars" style="font-size:24px; color: #fff;"></i>
+                        </button>
+
+                        <!-- Collapsible content -->
+                        <div class="collapse navbar-collapse" id="navbarContent">
+                            <ul class="navbar-nav mx-auto align-items-center">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/shop">Products</a>
+                                </li>
+                                <!-- Logo in center for medium and large screens -->
+                                <li class="nav-item d-none d-md-block">
+                                    <a class="navbar-brand mx-3" href="#">
+                                        <img style="height:100px; width:auto;" src="custom_web_theme/static/src/img/EVA-LOGO.png" alt="Logo"/>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact Us</a>
+                                </li>
+                            </ul>
+
+                            <!-- Search Bar -->
+                            <form class="form-inline my-2 my-md-0 d-flex">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+                                <button class="btn btn-outline-success" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </form>
+
+                            <!-- Shopping Cart (visible on small screens) -->
+                            <div class="navbar-cart d-md-none mt-3">
+                                <a href="#" class="nav-link">
+                                    <i class="fa fa-shopping-cart icon-color" style="font-size:24px;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </xpath>
+
+        <!-- Customize footer -->
+        <xpath expr="//footer" position="replace">
+            <footer>
+                <div class="container">
+                    <div class="row footer-flex">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <h4>More Information</h4>
+                            <div class="row">
+                                <h6>Locations</h6>
+                                <div class="d-flex flex-row my-3">
+                                    <a href="#" class="px-2">
+                                        <img src="custom_web_theme/static/src/img/Kenyan Flag.svg"/>
+                                    </a>
+                                    <div class="country col">
+                                        <span class="row px-3">Kenya</span>
+                                        <span class="row px-3">Village Market, Nairobi</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row mb-3">
+                                    <a href="#" class="px-2">
+                                        <img src="custom_web_theme/static/src/img/USA Flag.svg"/>
+                                    </a>
+                                    <div class="country col">
+                                        <span class="row px-3">US</span>
+                                        <span class="row px-3">California</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row mb-3">
+                                    <a href="#" class="px-2">
+                                        <img src="custom_web_theme/static/src/img/UAE Flag.svg"/>
+                                    </a>
+                                    <div class="country col">
+                                        <span class="row px-3">Dubai B2B Towers</span>
+                                        <span class="row px-3">Business Bay</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                            <img src="custom_web_theme/static/src/img/Maps.png" style="width:100%"/>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                            <div class="row align-center">
+                                <h4 class="text-center mb-4">Quick Links</h4>
+                                <ul class="list-unstyled">
+                                    <li class="text-center mb-2">
+                                        <a href="#">Home</a>
+                                    </li>
+                                    <li class="text-center mb-2">
+                                        <a href="#">About</a>
+                                    </li>
+                                    <li class="text-center mb-2">
+                                        <a href="#">Products</a>
+                                    </li>
+                                    <li class="text-center mb-4">
+                                        <a href="#">Contact Us</a>
+                                    </li>
+                                </ul>
+                                <div class="s_social_media text-start o_not_editable px-4 d-flex justify-content-between" data-snippet="s_social_media" data-name="Social Media" contenteditable="false" style="font-size: 22px;">
+                                    <a href="/website/social/facebook" class="s_social_media_facebook" target="_blank" aria-label="Facebook">
+                                        <i class="fa fa-facebook o_editable_media"/>
+                                    </a>
+                                    <a href="/website/social/twitter" class="s_social_media_twitter" target="_blank" aria-label="Twitter">
+                                        <i class="fa fa-twitter o_editable_media"/>
+                                    </a>
+                                    <a href="/website/social/linkedin" class="s_social_media_linkedin" target="_blank" aria-label="LinkedIn">
+                                        <i class="fa fa-linkedin  o_editable_media"/>
+                                    </a>
+                                    <a href="/" class="text-800" aria-label="Extra page">
+                                        <i class="fa fa-instagram o_editable_media"/>
+                                    </a>
+                                    <a href="/" class="text-800" aria-label="Extra page">
+                                        <i class="fa fa-youtube o_editable_media"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="row">
+                                <h4 class="text-center mb-4">Join us on social media</h4>
+                                <ul class="list-unstyled">
+                                    <li class="text-center mb-2">
+                                        <a href="#">Instagram</a>
+                                    </li>
+                                    <li class="text-center mb-2">
+                                        <a href="#">Facebook</a>
+                                    </li>
+                                    <li class="text-center mb-2">
+                                        <a href="#">LinkedIn</a>
+                                    </li>
+                                    <li class="text-center mb-2">
+                                        <a href="#">Twitter</a>
+                                    </li>
+                                    <li class="text-center mb-2">
+                                        <a href="#">Tiktok</a>
+                                    </li>
+                                    <li class="text-center mb-2">
+                                        <a href="#">Youtube</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="eva_homepage" inherit_id="website.homepage" name="Eva Homepage">
+        <xpath expr="//t[@t-call='website.layout']" position="replace">
+            <t t-call="website.layout">
+                <t t-set="pageName" t-value="'homepage'"/>
+                <t t-set="categories" t-value="[
+                    {'name': 'Cavier', 'image': '/custom_web_theme/static/src/img/categories/Cavier.svg'},
+                    {'name': 'Saffron', 'image': '/custom_web_theme/static/src/img/categories/Saffron.svg'},
+                    {'name': 'Nuts', 'image': '/custom_web_theme/static/src/img/categories/Nuts.svg'},
+                    {'name': 'Dates', 'image': '/custom_web_theme/static/src/img/categories/Dates.svg'},
+                    {'name': 'Dried Fruits', 'image': '/custom_web_theme/static/src/img/categories/Dried Fruits.svg'},
+                    {'name': 'Honey', 'image': '/custom_web_theme/static/src/img/categories/Honey.svg'},
+                    {'name': 'Granola', 'image': '/custom_web_theme/static/src/img/categories/Granola.svg'},
+                    {'name': 'Choco &amp; Sweets', 'image': '/custom_web_theme/static/src/img/categories/Chocolate.svg'},
+                    {'name': 'Tea &amp; Coffee', 'image': '/custom_web_theme/static/src/img/categories/Tea.svg'},
+                    {'name': 'Others', 'image': '/custom_web_theme/static/src/img/categories/Saffron.svg'}
+                ]"/>
+                <div id="wrap" class="oe_structure oe_empty" style="background-color: #0a2f1f; color: #ffffff;padding-top:116px">
+                    <!-- Hero Section -->
+                    <section class="s_cover o_colored_level s_parallax_no_overflow_hidden pt0 pb0 oe_img_bg o_bg_img_center hero-section" data-scroll-background-ratio="0" data-snippet="s_cover" data-name="Cover" style="background-image: url('/custom_web_theme/static/src/img/hero background.jpg');">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-8 col-sm-10 col-12">
+                                    <h1 class="display-4" style="color: #397B21;">EVA BAZAAR</h1>
+                                    <h6 class="o_default_snippet_text">
+                                        <strong>
+                                            <span class="h6-fs">
+                                                <font class="text-800">For a Deliciously </font>
+                                            </span>
+                                            <font class="text-800">
+                                                <span style="--text-highlight-width: 1px; --text-highlight-color: #CCAB65;" class="o_text_highlight o_text_highlight_freehand_1">
+                                                    <span class="h6-fs">Nutritious</span>
+                                                </span>
+                                            </font>
+                                            <span class="h6-fs">
+                                                <font class="text-800"> Snack!</font>
+                                            </span>
+                                        </strong>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Categories Section -->
+                    <section class="s_features o_colored_level pt24" data-snippet="s_features" data-name="Features">
+                        <div class="container-fluid">
+                            <div class="row justify-content-center">
+                                <div class="d-flex flex-wrap justify-content-center pb-1 o_colored_level col-lg-12">
+                                    <t t-for="categories" t-as="category">
+                                        <div t-attf-ss="text-center p-2 border-end border-0 border-top-0 border-start-0 border-bottom-0 #{'' if category_last else 'border-end'}" style="border-color: #7e745e !important; border-style: dashed !important; max-height: 80px; width: 130px">
+                                            <a t-att-href="'/shop/category/%s' % category['name'].lower().replace(' &amp; ', '-').replace(' ', '-')">
+                                                <img t-att-src="category['image']" t-att="category['name']" class="img img-fluid o_we_custom_image" loading="lazy" style="height: 40px; object-fit: contain;"/>
+                                            </a>
+                                            <p class="o_default_snippet_text o_small mt-2">
+                                                <font style="color: #ccab65; opacity: 0.8">
+                                                    <span style="font-size: 0.75rem;">
+                                                        <strong t-esc="category['name']"/>
+                                                    </span>
+                                                </font>
+                                            </p>
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Horizontal Line -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-11 col-lg-11 mx-auto">
+                                <hr style="height: 1px; border: none; background-color: #CCAB65; opacity:0.2; width: 100%;"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Nuts Products Section -->
+                    <t t-call="custom_web_theme.product_card_snippet">
+                        <t t-set="title">Top Selling</t>
+                        <t t-set="products" t-value="request.env['product.template'].sudo().search([('website_published', '=', True), ('public_categ_ids', 'in', [1])], limit=4)"/>
+                    </t>
+
+                    <!-- Dried Fruits Products Section -->
+                    <!-- <t t-call="website_evabazaar.custom_product_card">
+                        <t t-set="title">Editor's Pick</t>
+                        <t t-set="products" t-value="request.env['product.template'].sudo().search([('website_published', '=', True), ('public_categ_ids', 'in', [2])], limit=4)"/>
+                    </t> -->
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

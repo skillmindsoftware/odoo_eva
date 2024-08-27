@@ -49,6 +49,7 @@ body {
 // Header styles
 .navbar {
     padding: 0.5rem 1rem;
+    background-color: $background-color !important;
 
     .navbar-brand img {
         @media (max-width: 767.98px) {
@@ -145,9 +146,16 @@ body {
 // Homepage styles
 #wrap {
     background-color: $background-color !important;
+
+}
+
+// Ensure main content doesn't overlap with header
+body:not(.editor_enable) #wrapwrap main {
+    padding-top: 80px; // Adjust this value based on your header's height
 }
 
 .hero-section {
+    margin-top: 80px;
     height: 400px;
     min-height: 400px;
     max-height: 100vh;
